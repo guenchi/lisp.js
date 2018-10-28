@@ -1,15 +1,8 @@
 
 'use strict'
 
-const cons = (x, y) => m => m(x, y);
 
-const list = (...x) => {
-    let l = null;
-    for(let i = x.length - 1; i >= 0; i--){
-        l = cons(x[i], l);
-    }
-    return l;
-}
+const cons = (x, y) => m => m(x, y);
 
 const car = m => m((x, y) => x);
 
@@ -67,12 +60,17 @@ const cddadr = x => cdr(cdr(car(cdr(x))));
 
 const cdaadr = x => cdr(car(car(cdr(x))));
 
-
+const list = (...x) => {
+    let l = null;
+    for(let i = x.length - 1; i >= 0; i--){
+        l = cons(x[i], l);
+    }
+    return l;
+}
 
 
 
 exports.cons = cons;
-exports.list = list;
 exports.car = car;
 exports.cdr = cdr;
 exports.caar = caar;
@@ -101,4 +99,4 @@ exports.cddddr = cddddr;
 exports.cdaddr = cdaddr;
 exports.cddadr = cddadr;
 exports.cdaadr = cdaadr;
-
+exports.list = list;
