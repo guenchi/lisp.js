@@ -7,6 +7,14 @@ const car = (m) => m((x, y) => x);
 
 const cdr = (m) => m((x, y) => y);
 
+const list = (...k) => {
+    let x = null;
+    for(let i = k.length; i >= 0; i--){
+        x = cons(k[i], x);
+    }
+    return x;
+}
+
 const ref = (lst, k) => {
     if(lst === null){
         return false;
@@ -23,4 +31,5 @@ const ref = (lst, k) => {
 exports.cons = cons;
 exports.car = car;
 exports.cdr = cdr;
+exports.list = list;
 exports.ref = ref;
