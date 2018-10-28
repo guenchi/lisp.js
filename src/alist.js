@@ -3,16 +3,9 @@
 
 const {cons, car, cdr, caar, cdar, cddr} = require('./list');
 
-const ref = (lst, k) => {
-    if(lst === null){
-        return false;
-    }else{
-        if(caar(lst) === k){
-            return cdar(lst);
-        }else{
-            return ref(cdr(lst), k);
-        }
-    }
-}
+const ref = (l, k) => l ? caar(l) === k ? cdar(l) : ref(cdr(l), k) : false;
+
+const val = (l, k) => l ? cdar(l) === k ? caar(l) : val(cdr(l), k) : false;
 
 exports.ref = ref;
+exports.val = val;

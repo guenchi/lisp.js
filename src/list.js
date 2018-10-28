@@ -4,11 +4,11 @@
 const cons = (x, y) => m => m(x, y);
 
 const list = (...x) => {
-    let lst = null;
-    for(let i = x.length; i >= 0; i--){
-        lst = cons(x[i], lst);
+    let l = null;
+    for(let i = x.length - 1; i >= 0; i--){
+        l = cons(x[i], l);
     }
-    return lst;
+    return l;
 }
 
 const car = m => m((x, y) => x);
@@ -59,11 +59,15 @@ const cadddr = x => car(cdr(cdr(cdr(x))));
 
 const cdddar = x => cdr(cdr(cdr(car(x))));
 
+const cddddr = x => cdr(cdr(cdr(cdr(x))));
+
 const cdaddr = x => cdr(car(cdr(cdr(x))));
 
 const cddadr = x => cdr(cdr(car(cdr(x))));
 
 const cdaadr = x => cdr(car(car(cdr(x))));
+
+
 
 
 
@@ -93,6 +97,7 @@ exports.caddar = caddar;
 exports.cddaar = cddaar;
 exports.cadddr = cadddr;
 exports.cdddar = cdddar;
+exports.cddddr = cddddr;
 exports.cdaddr = cdaddr;
 exports.cddadr = cddadr;
 exports.cdaadr = cdaadr;
