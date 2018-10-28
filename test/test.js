@@ -1,8 +1,9 @@
+
 const {cons, car, cdr, list, ref} = require('list.js');
 
 
 
-const alist = cons(cons(1, 2), cons(cons(3, 4), cons(cons(5, 6), null)));
+const alist = list(cons(1, 2), cons(3, 4), cons(5, 6));
 
 console.log(ref(alist, 1));
 console.log(ref(alist, 3));

@@ -1,4 +1,5 @@
 
+'use strict'
 
 const {cons, car, cdr, caar, cdar, cddr} = require('./list');
 
