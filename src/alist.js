@@ -1,6 +1,6 @@
 
 
-const {cons, car, cdr, caar, cdar, list} = require('./list');
+const {cons, car, cdr, caar, cdar, cddr} = require('./list');
 
 const ref = (lst, k) => {
     if(lst === null){
