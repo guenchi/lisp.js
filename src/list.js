@@ -14,7 +14,7 @@ const ref = (lst, k) => {
         if(car(car(lst)) === k){
             return cdr(car(lst));
         }else{
-            ref(cdr(lst), k);
+            return ref(cdr(lst), k);
         }
     }
 }
