@@ -1,7 +1,7 @@
 
 'use strict'
 
-const {cons, car, cdr, caar, cdar, cddr, setcar} = require('./list');
+const {cons, car, cdr, caar, cadr, cdar, cddr, setcar, setcdr} = require('./list');
 
 const ref = (l, x) =>{
     if(l){
@@ -45,6 +45,26 @@ const alter = (l, x, y) =>{
     }
 }
 
+const push = (l, x, y) =>{
+    if(cdr(l) !== null){
+        setcdr(l, cons(car(l), cdr(l)));
+    }
+    setcar(l, cons(x, y));
+}
+
+const pop = l =>{
+    const x = car(l);
+    if(cdr(l)){
+        setcar(l, cadr(l));
+        setcdr(l, cddr(l));
+    }else{
+        setcar(l, null);
+    }
+    return x;
+}
+
 exports.ref = ref;
 exports.val = val;
 exports.alter = alter;
+exports.push = push;
+exports.pop = pop;
