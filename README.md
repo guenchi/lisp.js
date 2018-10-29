@@ -1,5 +1,7 @@
 # list.js
 
+list is a struct of Lisp, useful for a programme such as Compiler etc.
+
 ***cons***
 
 production a pair:
