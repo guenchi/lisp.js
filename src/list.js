@@ -2,11 +2,15 @@
 'use strict'
 
 
-const cons = (x, y) => m => m(x, y);
+const cons = (x, y) => [x, y];
 
-const car = m => m((x, y) => x);
+const car = ([x, y]) => x;
 
-const cdr = m => m((x, y) => y);
+const cdr = ([x, y]) => y;
+
+const setcar = (m, x) => m[0] = x;
+
+const setcdr = (m, x) => m[1] = x;
 
 const caar = x => car(car(x));
 
@@ -73,6 +77,8 @@ const list = (...x) => {
 exports.cons = cons;
 exports.car = car;
 exports.cdr = cdr;
+exports.setcar = setcar;
+exports.setcdr = setcdr;
 exports.caar = caar;
 exports.cadr = cadr;
 exports.cdar = cdar;
