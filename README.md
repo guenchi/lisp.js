@@ -35,3 +35,7 @@ set a cdr value to a pair or a list:
 production a list by values:
 
 `list(value1, value2, value3 ...);`
+
+***caar, cadr, cdar, cddr ... cddddr***
+
+
