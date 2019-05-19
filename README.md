@@ -1,6 +1,6 @@
-# list.js
+# lisp.js
 
-list is a struct of Lisp, useful for a programme such as Compiler etc.
+
 
 ***cons***
 
